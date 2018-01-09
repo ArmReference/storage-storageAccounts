@@ -1,6 +1,15 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "StorageAccountName": {
+      "value": "armreference"
+    },
+    "ContainerName": {
+      "value": "2017-09-01"
+    },
+    "SasToken": {
+      "value": "?sv=2017-04-17&ss=b&srt=co&sp=rl&se=2018-09-01T00:00:00Z&st=2017-09-01T00:00:00Z&spr=https&sig=V8QmbLHyowf6dPBb8Vqf3VbaOT9igBMLpmpKzjciHNU%3D"
     }
+  }
 }
