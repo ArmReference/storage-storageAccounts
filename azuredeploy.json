@@ -17,7 +17,7 @@
  },
  "variables": {
   "Provider": "/Microsoft.Storage",
-  "Resource": "/storageAccounts",
+  "Resource": "/reference",
   "templateUri": "[concat('https://',parameters('StorageAccountName'),'.blob.core.windows.net/',parameters('ContainerName'),variables('Provider'),variables('Resource'))]"
  },
  "resources": [

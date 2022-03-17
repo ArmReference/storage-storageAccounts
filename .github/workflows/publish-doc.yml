@@ -1,0 +1,50 @@
+name: Generate ARM templates docs
+on:
+  push:
+    branches: [ main ]
+jobs:
+  arm_docs:
+    name: Generate ARM template docs
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Generate Reference Documentation
+      id: Container_Name
+      run: |
+        Install-Module -Name 'PSDocs.Azure' -Repository PSGallery -force;
+        Get-AzDocTemplateFile | ForEach-Object {
+          $TemplateFile = Get-Item -Path $_.TemplateFile;
+          if ($TemplateFile.BaseName -eq 'azuredeploy') {
+            $Template = Get-Content $TemplateFile |ConvertFrom-Json;
+            $RepoName = $TemplateFile.Directory.Parent.Name;
+            $Version = $Template.ContentVersion;
+            $ReadmeHeader = "[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FArmReference%2F$($RepoName)%2F$($Version)%2Fazuredeploy.json)"
+          }
+          $Container = (Get-Date).GetDateTimeFormats()[1];
+          Invoke-PSDocument -Module PSDocs.Azure -OutputPath "out/docs" -InputObject $TemplateFile.FullName -InstanceName $TemplateFile.BaseName;
+        };
+        New-Item docs -ItemType Directory -Force;
+        $Readme = Get-Content "out/docs/azuredeploy.md";
+        Write-Output $ReadmeHeader |Out-File "README.md" -Force;
+        Write-Output $Readme |Out-File "README.md" -Append;
+        Remove-Item "out/docs/azuredeploy.md"
+        Move-Item "out/docs/*.md" docs/ -Force;
+        echo "::set-output name=CONTAINER::$($Container)"
+      shell: pwsh
+    - name: Setup Git Config
+      run:
+        git config user.name "GitHub Action";
+        git config user.email "<>";
+    - name: Update ReadME
+      run:
+        git add *;
+        git commit -m "Updating README with latest documentation";
+        git push origin main
+    - name: Send to Azure Storage Account
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.34.1
+        inlinescript: |
+          az storage container create --name '${{steps.Container_Name.outputs.CONTAINER}}' --account-name ${{ secrets.AccountName }} --account-key ${{ secrets.AccountKey }} --public-access container
+          az storage blob upload-batch --account-name ${{ secrets.AccountName }} --account-key ${{ secrets.AccountKey }} -d ${{steps.Container_Name.outputs.CONTAINER}} -s reference --overwrite true --destination-path Microsoft.Storage/reference
