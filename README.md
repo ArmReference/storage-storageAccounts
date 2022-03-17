@@ -35,7 +35,7 @@ The Shared Access Signature for the Storage Account.
 
 Name | Type | Description
 ---- | ---- | -----------
-Empty | object |
+armTemplate | object | Fully populated template
 
 ## Snippets
 
