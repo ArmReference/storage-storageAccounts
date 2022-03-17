@@ -30,7 +30,7 @@
     "mode": "Incremental",
     "templateLink": {
      "uri": "[concat(variables('templateUri'), '/storageAccounts.json', parameters('SasToken'))]",
-     "contentVersion": "2017.09.01.0"
+     "contentVersion": "1.0.0.0"
     },
     "parameters": {
      "name": {
