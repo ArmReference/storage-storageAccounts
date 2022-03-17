@@ -4,15 +4,21 @@
  "parameters": {
   "StorageAccountName": {
    "type": "string",
-   "defaultValue": ""
+   "metadata": {
+    "description": "The name of the Azure Storage Account where the templates are stored."
+   }
   },
   "ContainerName": {
    "type": "string",
-   "defaultValue": ""
+   "metadata": {
+    "description": "The Container inside the Storage Account."
+   }
   },
   "SasToken": {
    "type": "string",
-   "defaultValue": ""
+   "metadata": {
+    "description": "The Shared Access Signature for the Storage Account."
+   }
   }
  },
  "variables": {
@@ -49,7 +55,7 @@
  "outputs": {
   "Empty": {
    "type": "object",
-   "value": "[reference('CreateStorageAccount').outputs.storageAccounts.value]"
+   "value": "[reference('BuildStorageAccount').outputs.storageAccounts.value]"
   }
  }
 }
