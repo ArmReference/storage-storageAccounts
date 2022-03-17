@@ -9,27 +9,27 @@ AAzure Storage is a Microsoft-managed service providing cloud storage that is hi
 
 Parameter name | Required | Description
 -------------- | -------- | -----------
-StorageAccountName | No       |
-ContainerName  | No       |
-SasToken       | No       |
+StorageAccountName | Yes      | The name of the Azure Storage Account where the templates are stored.
+ContainerName  | Yes      | The Container inside the Storage Account.
+SasToken       | Yes      | The Shared Access Signature for the Storage Account.
 
 ### StorageAccountName
 
-![Parameter Setting](https://img.shields.io/badge/parameter-optional-green?style=flat-square)
+![Parameter Setting](https://img.shields.io/badge/parameter-required-orange?style=flat-square)
 
-
+The name of the Azure Storage Account where the templates are stored.
 
 ### ContainerName
 
-![Parameter Setting](https://img.shields.io/badge/parameter-optional-green?style=flat-square)
+![Parameter Setting](https://img.shields.io/badge/parameter-required-orange?style=flat-square)
 
-
+The Container inside the Storage Account.
 
 ### SasToken
 
-![Parameter Setting](https://img.shields.io/badge/parameter-optional-green?style=flat-square)
+![Parameter Setting](https://img.shields.io/badge/parameter-required-orange?style=flat-square)
 
-
+The Shared Access Signature for the Storage Account.
 
 ## Outputs
 
