@@ -53,9 +53,21 @@
   }
  ],
  "outputs": {
-  "Empty": {
+  "armTemplate": {
    "type": "object",
-   "value": "[reference('BuildStorageAccount').outputs.storageAccounts.value]"
+   "value": {
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.4",
+    "parameters": {},
+    "variables": {},
+    "resources": [
+     "[reference('BuildStorageAccount').outputs.storageAccounts.value]"
+    ],
+    "outputs": {}
+   },
+   "metadata": {
+    "description": "Fully populated template"
+   }
   }
  }
 }
