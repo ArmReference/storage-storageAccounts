@@ -3,7 +3,10 @@
   "contentVersion": "2017.09.01.0",
   "parameters": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "metadata": {
+        "description": "The resource name"
+      }
     },
     "sku": {
       "type": "string",
@@ -13,7 +16,10 @@
         "Standard_RAGRS",
         "Standard_ZRS",
         "Premium_LRS"
-      ]
+      ],
+      "metadata": {
+        "description": "The SKU of the storage account."
+      }
     },
     "kind": {
       "type": "string",
@@ -21,7 +27,10 @@
         "Storage",
         "StorageV2",
         "BlobStorage"
-      ]
+      ],
+      "metadata": {
+        "desciption": "Indicates the type of storage account."
+      }
     },
     "DependsOn": {
       "type": "array",
