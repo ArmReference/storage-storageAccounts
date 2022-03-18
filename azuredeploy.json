@@ -1,6 +1,6 @@
 {
    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-   "contentVersion": "1.0.0.0",
+   "contentVersion": "1.0.0.1",
    "parameters": {
       "StorageAccountName": {
          "type": "string",
@@ -36,7 +36,7 @@
             "mode": "Incremental",
             "templateLink": {
                "uri": "[concat(variables('templateUri'), '/sku.json', parameters('SasToken'))]",
-               "contentVersion": "1.0.0.0"
+               "contentVersion": "1.0.0.1"
             },
             "parameters": {
                "name": {
@@ -54,7 +54,7 @@
             "mode": "Incremental",
             "templateLink": {
                "uri": "[concat(variables('templateUri'), '/encryptionservice.json', parameters('SasToken'))]",
-               "contentVersion": "1.0.0.0"
+               "contentVersion": "1.0.0.1"
             },
             "parameters": {
                "enabled": {
@@ -77,7 +77,7 @@
             "mode": "Incremental",
             "templateLink": {
                "uri": "[concat(variables('templateUri'), '/encryptionservices.json', parameters('SasToken'))]",
-               "contentVersion": "1.0.0.0"
+               "contentVersion": "1.0.0.1"
             },
             "parameters": {
                "file": {
@@ -100,7 +100,7 @@
             "mode": "Incremental",
             "templateLink": {
                "uri": "[concat(variables('templateUri'), '/encryption.json', parameters('SasToken'))]",
-               "contentVersion": "1.0.0.0"
+               "contentVersion": "1.0.0.1"
             },
             "parameters": {
                "identity": {
@@ -132,7 +132,7 @@
             "mode": "Incremental",
             "templateLink": {
                "uri": "[concat(variables('templateUri'), '/networkruleset.json', parameters('SasToken'))]",
-               "contentVersion": "1.0.0.0"
+               "contentVersion": "1.0.0.1"
             },
             "parameters": {
                "bypass": {
@@ -165,7 +165,7 @@
             "mode": "Incremental",
             "templateLink": {
                "uri": "[concat(variables('templateUri'), '/storageaccountpropertiescreateparameters.json', parameters('SasToken'))]",
-               "contentVersion": "1.0.0.0"
+               "contentVersion": "1.0.0.1"
             },
             "parameters": {
                "accessTier": {
@@ -198,7 +198,7 @@
             "mode": "Incremental",
             "templateLink": {
                "uri": "[concat(variables('templateUri'), '/storageAccounts.json', parameters('SasToken'))]",
-               "contentVersion": "1.0.0.0"
+               "contentVersion": "1.0.0.1"
             },
             "parameters": {
                "name": {
@@ -222,7 +222,7 @@
          "type": "object",
          "value": {
             "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-            "contentVersion": "1.0.0.0",
+            "contentVersion": "1.0.0.1",
             "parameters": {},
             "variables": {},
             "resources": [

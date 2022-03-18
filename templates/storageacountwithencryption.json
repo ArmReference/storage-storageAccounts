@@ -1,0 +1,64 @@
+{
+ "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+ "contentVersion": "1.0.0.1",
+ "parameters": {},
+ "variables": {},
+ "resources": [
+  {
+   "type": "Microsoft.Storage/storageAccounts",
+   "name": "oub7onvbeflzustandardsa",
+   "apiVersion": "2021-08-01",
+   "location": "centralus",
+   "dependsOn": null,
+   "sku": {
+    "name": "Standard_LRS"
+   },
+   "kind": "Storage",
+   "properties": {
+    "allowBlobPublicAccess": true,
+    "allowCrossTenantReplication": true,
+    "allowedCopyScope": "AAD",
+    "allowSharedKeyAccess": true,
+    "userAssignedIdentities": {},
+    "customDomain": {},
+    "defaultToOAuthAuthentication": false,
+    "encryption": {
+     "identity": {},
+     "keySource": "Microsoft.Storage",
+     "keyvaultproperties": {},
+     "services": {
+      "blob": {
+       "enabled": true,
+       "keyType": "Account"
+      },
+      "file": {
+       "enabled": true,
+       "keyType": "Account"
+      },
+      "queue": {},
+      "table": {}
+     }
+    },
+    "isHnsEnabled": false,
+    "isLocalUserEnabled": false,
+    "isNfsV3Enabled": false,
+    "isSftpEnabled": false,
+    "keyPolicy": {},
+    "largeFileSharesState": "Disabled",
+    "minimumTlsVersion": "TLS1_0",
+    "networkAcls": {
+     "bypass": "AzureServices",
+     "defaultAction": "Allow",
+     "ipRules": [],
+     "resourceAccessRules": [],
+     "virtualNetworkRules": []
+    },
+    "publicNetworkAccess": "Enabled",
+    "sasPolicy": {},
+    "supportsHttpsTrafficOnly": true
+   },
+   "tags": {}
+  }
+ ],
+ "outputs": {}
+}

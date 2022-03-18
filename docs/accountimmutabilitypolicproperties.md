@@ -43,7 +43,7 @@ AccountImmutabilityPolicyProperties | object | This defines account-level immuta
 ```json
 {
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
-    "contentVersion": "1.0.0.0",
+    "contentVersion": "1.0.0.1",
     "metadata": {
         "template": "reference/accountimmutabilitypolicproperties.json"
     },

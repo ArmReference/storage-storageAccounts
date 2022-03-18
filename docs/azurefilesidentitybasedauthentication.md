@@ -38,7 +38,7 @@ Indicates the directory service used.
 
 Name | Type | Description
 ---- | ---- | -----------
-AzureFilesIdentityBasedAuthentication | object | Settings for Azure Files identity based authentication.	
+AzureFilesIdentityBasedAuthentication | object | Settings for Azure Files identity based authentication.
 
 ## Snippets
 
@@ -47,7 +47,7 @@ AzureFilesIdentityBasedAuthentication | object | Settings for Azure Files identi
 ```json
 {
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
-    "contentVersion": "1.0.0.0",
+    "contentVersion": "1.0.0.1",
     "metadata": {
         "template": "reference/azurefilesidentitybasedauthentication.json"
     },
