@@ -1,0 +1,53 @@
+{
+ "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+ "contentVersion": "1.0.0.0",
+ "parameters": {
+   "activeDirectoryProperties": {
+     "type": "object",
+     "defaultValue": {},
+     "metadata": {
+       "description": "Settings properties for Active Directory (AD)."
+     }
+   },
+   "defaultSharePermission": {
+     "type": "string",
+     "defaultValue": "None",
+     "allowedValues": [
+       "None",
+       "StorageFileDataSmbShareContributor",
+       "StorageFileDataSmbShareElevatedContributor",
+       "StorageFileDataSmbShareReader"
+     ],
+     "metadata": {
+       "description": "Default share permission for users using Kerberos authentication if RBAC role is not assigned."
+     }
+   },
+   "directoryServiceOptions": {
+     "type": "string",
+     "defaultValue": "None",
+     "allowedValues": [
+       "None",
+       "AADDS",
+       "AD"
+     ],
+     "metadata": {
+       "description": "Indicates the directory service used."
+     }
+   }
+ },
+ "variables": {
+   "AzureFilesIdentityBasedAuthentication": {
+     "activeDirectoryProperties": "[parameters('activeDirectoryProperties')]",
+     "defaultSharePermission": "[parameters('defaultSharePermission')]",
+     "directoryServiceOptions": "[parameters('directoryServiceOptions')]"
+   }
+ },
+ "resources": [
+ ],
+ "outputs": {
+   "AzureFilesIdentityBasedAuthentication": {
+     "type": "object",
+     "value": "[variables('AzureFilesIdentityBasedAuthentication')]"
+   }
+ }
+}
