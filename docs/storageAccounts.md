@@ -5,8 +5,13 @@
 Parameter name | Required | Description
 -------------- | -------- | -----------
 name           | Yes      | The resource name
+location       | No       | Resource location.
 sku            | Yes      | The SKU of the storage account.
 kind           | Yes      |
+extendedLocation | No       | The complex type of the extended location.
+identity       | No       | Identity for the resource.
+properties     | No       | The parameters used to create the storage account.
+tags           | No       | Resource tags.
 DependsOn      | No       | Pass dependencies
 
 ### name
@@ -15,13 +20,19 @@ DependsOn      | No       | Pass dependencies
 
 The resource name
 
+### location
+
+![Parameter Setting](https://img.shields.io/badge/parameter-optional-green?style=flat-square)
+
+Resource location.
+
+- Default value: `[resourceGroup().location]`
+
 ### sku
 
 ![Parameter Setting](https://img.shields.io/badge/parameter-required-orange?style=flat-square)
 
 The SKU of the storage account.
-
-- Allowed values: `Standard_LRS`, `Standard_GRS`, `Standard_RAGRS`, `Standard_ZRS`, `Premium_LRS`
 
 ### kind
 
@@ -29,7 +40,31 @@ The SKU of the storage account.
 
 
 
-- Allowed values: `Storage`, `StorageV2`, `BlobStorage`
+- Allowed values: `BlobStorage`, `BlockBlobStorage`, `FileStorage`, `Storage`, `StorageV2`
+
+### extendedLocation
+
+![Parameter Setting](https://img.shields.io/badge/parameter-optional-green?style=flat-square)
+
+The complex type of the extended location.
+
+### identity
+
+![Parameter Setting](https://img.shields.io/badge/parameter-optional-green?style=flat-square)
+
+Identity for the resource.
+
+### properties
+
+![Parameter Setting](https://img.shields.io/badge/parameter-optional-green?style=flat-square)
+
+The parameters used to create the storage account.
+
+### tags
+
+![Parameter Setting](https://img.shields.io/badge/parameter-optional-green?style=flat-square)
+
+Resource tags.
 
 ### DependsOn
 
@@ -58,11 +93,26 @@ storageAccounts | object |
         "name": {
             "value": ""
         },
+        "location": {
+            "value": "[resourceGroup().location]"
+        },
         "sku": {
-            "value": ""
+            "value": {}
         },
         "kind": {
             "value": ""
+        },
+        "extendedLocation": {
+            "value": {}
+        },
+        "identity": {
+            "value": {}
+        },
+        "properties": {
+            "value": {}
+        },
+        "tags": {
+            "value": {}
         },
         "DependsOn": {
             "value": []
