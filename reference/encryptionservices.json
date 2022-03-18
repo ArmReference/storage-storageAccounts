@@ -1,0 +1,50 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "blob": {
+      "type": "object",
+      "defaultValue": {},
+      "metadata": {
+        "description": "A service that allows server-side encryption to be used."
+      }
+    },
+    "file": {
+      "type": "object",
+      "defaultValue": {},
+      "metadata": {
+        "description": "A service that allows server-side encryption to be used."
+      }
+    },
+    "queue": {
+      "type": "object",
+      "defaultValue": {},
+      "metadata": {
+        "description": "A service that allows server-side encryption to be used."
+      }
+    },
+    "table": {
+      "type": "object",
+      "defaultValue": {},
+      "metadata": {
+        "description": "A service that allows server-side encryption to be used."
+      }
+    }
+  },
+  "variables": {
+    "EncryptionServices": {
+      "blob": "[parameters('blob')]",
+      "file": "[parameters('file')]",
+      "queue": "[parameters('queue')]",
+      "table": "[parameters('table')]"
+    }
+  },
+  "resources": [
+  ],
+  "outputs": {
+    "EncryptionServices": {
+      "type": "object",
+      "value": "[variables('EncryptionServices')]"
+    }
+  }
+}
