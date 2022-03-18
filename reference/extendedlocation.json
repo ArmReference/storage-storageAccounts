@@ -1,0 +1,33 @@
+{
+ "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+ "contentVersion": "1.0.0.0",
+ "parameters": {
+   "name": {
+     "type": "string",
+     "metadata": {
+       "description": "The name of the extended location."
+     }
+   },
+   "type": {
+     "type": "string",
+     "defaultValue": "EdgeZone",
+     "metadata": {
+       "description": "The type of extendedLocation."
+     }
+   }
+ },
+ "variables": {
+   "ExtendedLocation": {
+     "name": "[parameters('name')]",
+     "type": "[parameters('type')]"
+   }
+ },
+ "resources": [
+ ],
+ "outputs": {
+   "ExtendedLocation": {
+     "type": "object",
+     "value": "[variables('ExtendedLocation')]"
+   }
+ }
+}
