@@ -45,7 +45,14 @@
       "type": "object",
       "defaultValue": {},
       "metadata": {
-        "description": "	Identity for the resource."
+        "description": "Identity for the resource."
+      }
+    },
+    "properties": {
+      "type": "object",
+      "defaultValue": {},
+      "metadata": {
+        "description": "The parameters used to create the storage account."
       }
     },
     "tags": {
@@ -67,7 +74,7 @@
     "storageAccounts": {
       "type": "Microsoft.Storage/storageAccounts",
       "name": "[parameters('name')]",
-      "apiVersion": "2017-10-01",
+      "apiVersion": "2021-08-01",
       "location": "[parameters('location')]",
       "dependsOn": "[if(empty(parameters('DependsOn')),json('null'),parameters('DependsOn'))]",
       "sku": {
@@ -76,8 +83,7 @@
       "kind": "[parameters('kind')]",
       "extendedLocation": "[parameters('extendedLocation')]",
       "identity": "[parameters('identity')]",
-      "properties": {
-      },
+      "properties": "[parameters('properties')]",
       "tags": "[parameters('tags')]"
     }
   },
