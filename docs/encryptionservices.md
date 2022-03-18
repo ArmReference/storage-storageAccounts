@@ -37,7 +37,7 @@ A service that allows server-side encryption to be used.
 
 Name | Type | Description
 ---- | ---- | -----------
-EncryptionServices | object |
+EncryptionServices | object | A list of services that support encryption.
 
 ## Snippets
 

@@ -25,7 +25,7 @@ Indicates whether indirect CName validation is enabled. Default value is false. 
 
 Name | Type | Description
 ---- | ---- | -----------
-CustomDomain | object |
+CustomDomain | object | The custom domain assigned to this storage account. This can be set via Update
 
 ## Snippets
 

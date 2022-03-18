@@ -25,7 +25,7 @@ Full resource id of a vnet subnet
 
 Name | Type | Description
 ---- | ---- | -----------
-VirtualNetworkRule | object | VirtualNetworkRule
+VirtualNetworkRule | object | Sets the virtual network rules
 
 ## Snippets
 

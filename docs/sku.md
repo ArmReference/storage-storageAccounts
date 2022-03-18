@@ -18,7 +18,7 @@ The SKU name. Required for account creation; optional for update. Note that in o
 
 Name | Type | Description
 ---- | ---- | -----------
-sku  | object |
+sku  | object | The SKU of the storage account.
 
 ## Snippets
 

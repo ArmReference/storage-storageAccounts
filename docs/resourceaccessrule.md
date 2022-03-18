@@ -23,7 +23,7 @@ Tenant Id
 
 Name | Type | Description
 ---- | ---- | -----------
-ResourceAccessRule | object | ResourceAccessRule
+ResourceAccessRule | object | Sets the resource access rules
 
 ## Snippets
 

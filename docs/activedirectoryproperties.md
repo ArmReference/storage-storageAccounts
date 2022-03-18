@@ -67,7 +67,7 @@ Specifies the Active Directory SAMAccountName for Azure Storage.
 
 Name | Type | Description
 ---- | ---- | -----------
-ActiveDirectoryProperties | object |
+ActiveDirectoryProperties | object | Settings properties for Active Directory (AD).
 
 ## Snippets
 

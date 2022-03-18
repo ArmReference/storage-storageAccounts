@@ -50,7 +50,7 @@ TSets the virtual network rules
 
 Name | Type | Description
 ---- | ---- | -----------
-NetworkRuleSet | object | NetworkRuleSet
+NetworkRuleSet | object | Network rule set
 
 ## Snippets
 

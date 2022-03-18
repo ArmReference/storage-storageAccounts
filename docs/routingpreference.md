@@ -32,7 +32,7 @@ Routing Choice defines the kind of network routing opted by the user.
 
 Name | Type | Description
 ---- | ---- | -----------
-RoutingPreference | object |
+RoutingPreference | object | Routing preference defines the type of network, either microsoft or internet routing to be used to deliver the user data, the default option is microsoft routing
 
 ## Snippets
 

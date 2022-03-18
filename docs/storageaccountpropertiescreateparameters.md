@@ -202,7 +202,7 @@ Allows https traffic only to storage service if sets to true. The default value 
 
 Name | Type | Description
 ---- | ---- | -----------
-StorageAccountPropertiesCreateParameters | object |
+StorageAccountPropertiesCreateParameters | object | The parameters used to create the storage account.
 
 ## Snippets
 

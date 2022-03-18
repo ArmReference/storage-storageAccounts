@@ -27,7 +27,7 @@ Gets or sets a list of key value pairs that describe the set of User Assigned id
 
 Name | Type | Description
 ---- | ---- | -----------
-Identity | object |
+Identity | object | Identity for the resource.
 
 ## Snippets
 

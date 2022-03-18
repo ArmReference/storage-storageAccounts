@@ -34,7 +34,7 @@ The ImmutabilityPolicy state defines the mode of the policy. Disabled state disa
 
 Name | Type | Description
 ---- | ---- | -----------
-AccountImmutabilityPolicyProperties | object |
+AccountImmutabilityPolicyProperties | object | This defines account-level immutability policy properties.
 
 ## Snippets
 

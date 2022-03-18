@@ -16,7 +16,7 @@ The key expiration period in days.
 
 Name | Type | Description
 ---- | ---- | -----------
-KeyPolicy | object |
+KeyPolicy | object | KeyPolicy assigned to the storage account.
 
 ## Snippets
 

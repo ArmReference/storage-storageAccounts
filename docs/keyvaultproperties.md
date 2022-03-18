@@ -30,7 +30,7 @@ The version of KeyVault key.
 
 Name | Type | Description
 ---- | ---- | -----------
-KeyVaultProperties | object |
+KeyVaultProperties | object | Properties of key vault.
 
 ## Snippets
 

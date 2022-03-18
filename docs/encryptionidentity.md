@@ -23,7 +23,7 @@ Resource identifier of the UserAssigned identity to be associated with server-si
 
 Name | Type | Description
 ---- | ---- | -----------
-EncryptionIdentity | object |
+EncryptionIdentity | object | Encryption identity for the storage account.
 
 ## Snippets
 

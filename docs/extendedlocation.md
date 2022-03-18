@@ -25,7 +25,7 @@ The type of extendedLocation.
 
 Name | Type | Description
 ---- | ---- | -----------
-ExtendedLocation | object |
+ExtendedLocation | object | The complex type of the extended location.
 
 ## Snippets
 

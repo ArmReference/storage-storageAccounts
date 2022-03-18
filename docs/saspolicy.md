@@ -27,7 +27,7 @@ The SAS expiration period, DD.HH:MM:SS.
 
 Name | Type | Description
 ---- | ---- | -----------
-SasPolicy | object | SasPolicy
+SasPolicy | object | SasPolicy assigned to the storage account.
 
 ## Snippets
 

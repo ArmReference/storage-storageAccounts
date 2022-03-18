@@ -38,7 +38,7 @@ Indicates the directory service used.
 
 Name | Type | Description
 ---- | ---- | -----------
-AzureFilesIdentityBasedAuthentication | object |
+AzureFilesIdentityBasedAuthentication | object | Settings for Azure Files identity based authentication.	
 
 ## Snippets
 

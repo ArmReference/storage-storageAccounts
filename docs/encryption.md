@@ -46,7 +46,7 @@ A list of services that support encryption
 
 Name | Type | Description
 ---- | ---- | -----------
-Encryption | object |
+Encryption | object | The encryption settings on the storage account.
 
 ## Snippets
 

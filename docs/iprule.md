@@ -25,7 +25,7 @@ Specifies the IP or IP range in CIDR format. Only IPV4 address is allowed.
 
 Name | Type | Description
 ---- | ---- | -----------
-IPRule | object | IPRule
+IPRule | object | Sets the IP ACL rules
 
 ## Snippets
 

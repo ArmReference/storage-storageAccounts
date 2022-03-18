@@ -27,7 +27,7 @@ Encryption key type to be used for the encryption service. 'Account' key type im
 
 Name | Type | Description
 ---- | ---- | -----------
-EncryptionService | object |
+EncryptionService | object | A service that allows server-side encryption to be used.
 
 ## Snippets
 

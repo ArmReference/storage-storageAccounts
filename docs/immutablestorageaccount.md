@@ -23,7 +23,7 @@ This defines account-level immutability policy properties.
 
 Name | Type | Description
 ---- | ---- | -----------
-ImmutableStorageAccount | object |
+ImmutableStorageAccount | object | This property enables and defines account-level immutability. Enabling the feature auto-enables Blob Versioning.
 
 ## Snippets
 
