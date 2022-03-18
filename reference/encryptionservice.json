@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "enabled": {
+      "type": "bool",
+      "defaultValue": true,
+      "metadata": {
+        "description": "A boolean indicating whether or not the service encrypts the data as it is stored. Encryption at rest is enabled by default today and cannot be disabled."
+      }
+    },
+    "keyType": {
+      "type": "string",
+      "allowedValues": [
+        "Account",
+        "Service"
+      ],
+      "metadata": {
+        "description": "Encryption key type to be used for the encryption service. 'Account' key type implies that an account-scoped encryption key will be used. 'Service' key type implies that a default service key is used."
+      }
+    }
+  },
+  "variables": {
+    "EncryptionService": {
+      "enabled": "[parameters('enabled')]",
+      "keyType": "[parameters('keyType')]"
+    }
+  },
+  "resources": [
+  ],
+  "outputs": {
+    "EncryptionService": {
+      "type": "object",
+      "value": "[variables('EncryptionService')]"
+    }
+  }
+}
