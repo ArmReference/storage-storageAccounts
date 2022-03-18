@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.1",
+  "parameters": {
+    "expirationAction": {
+      "type": "string",
+      "defaultValue": "Log",
+      "allowedValues": [
+        "Log"
+      ],
+      "metadata": {
+        "description": "The SAS expiration action. Can only be Log."
+      }
+    },
+    "sasExpirationPeriod": {
+      "type": "string",
+      "metadata": {
+        "description": "The SAS expiration period, DD.HH:MM:SS."
+      }
+    }
+  },
+  "variables": {
+    "SasPolicy": {
+      "expirationAction": "[parameters('expirationAction')]",
+      "sasExpirationPeriod": "[parameters('sasExpirationPeriod')]"
+    }
+  },
+  "resources": [
+  ],
+  "outputs": {
+    "SasPolicy": {
+      "type": "object",
+      "value": "[variables('SasPolicy')]",
+      "metadata": {
+        "description": "SasPolicy"
+      }
+    }
+  }
+}

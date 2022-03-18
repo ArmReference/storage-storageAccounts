@@ -1,0 +1,43 @@
+{
+ "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+ "contentVersion": "1.0.0.0",
+ "parameters": {
+   "publishInternetEndpoints": {
+     "type": "bool",
+     "metadata": {
+       "description": "A boolean flag which indicates whether internet routing storage endpoints are to be published"
+     }
+   },
+   "publishMicrosoftEndpoints": {
+     "type": "bool",
+     "metadata": {
+       "description": "A boolean flag which indicates whether microsoft routing storage endpoints are to be published"
+     }
+   },
+   "routingChoice": {
+     "type": "string",
+     "allowedValues": [
+       "InternetRouting",
+       "MicrosoftRouting"
+     ],
+     "metadata": {
+       "description": "Routing Choice defines the kind of network routing opted by the user."
+     }
+   }
+ },
+ "variables": {
+   "RoutingPreference": {
+     "publishInternetEndpoints": "[parameters('publishInternetEndpoints')]",
+     "publishMicrosoftEndpoints": "[parameters('publishMicrosoftEndpoints')]",
+     "routingChoice": "[parameters('routingChoice')]"
+   }
+ },
+ "resources": [
+ ],
+ "outputs": {
+   "RoutingPreference": {
+     "type": "object",
+     "value": "[variables('RoutingPreference')]"
+   }
+ }
+}

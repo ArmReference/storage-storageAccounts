@@ -1,0 +1,32 @@
+{
+ "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+ "contentVersion": "1.0.0.0",
+ "parameters": {
+   "enabled": {
+     "type": "bool",
+     "metadata": {
+       "description": "A boolean flag which enables account-level immutability. All the containers under such an account have object-level immutability enabled by default."
+     }
+   },
+   "immutabilityPolicy": {
+     "type": "object",
+     "metadata": {
+       "description": "This defines account-level immutability policy properties."
+     }
+   }
+ },
+ "variables": {
+   "ImmutableStorageAccount": {
+     "enabled": "[parameters('enabled')]",
+     "immutabilityPolicy": "[parameters('immutabilityPolicy')]"
+   }
+ },
+ "resources": [
+ ],
+ "outputs": {
+   "ImmutableStorageAccount": {
+     "type": "object",
+     "value": "[variables('ImmutableStorageAccount')]"
+   }
+ }
+}

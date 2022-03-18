@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "keyname": {
+      "type": "string",
+      "metadata": {
+        "description": "The name of KeyVault key."
+      }
+    },
+    "keyvaulturi": {
+      "type": "string",
+      "metadata": {
+        "description": "The Uri of KeyVault."
+      }
+    },
+    "keyversion": {
+      "type": "string",
+      "metadata": {
+        "description": "The version of KeyVault key."
+      }
+    }
+  },
+  "variables": {
+    "KeyVaultProperties": {
+      "keyname": "[parameters('keyname')]",
+      "keyvaulturi": "[parameters('keyvaulturi')]",
+      "keyversion": "[parameters('keyversion')]"
+
+    }
+  },
+  "resources": [
+  ],
+  "outputs": {
+    "KeyVaultProperties": {
+      "type": "object",
+      "value": "[variables('KeyVaultProperties')]"
+    }
+  }
+}

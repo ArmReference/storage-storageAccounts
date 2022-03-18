@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "type": {
+      "type": "string",
+      "defaultValue": "None",
+      "allowedValues": [
+        "None",
+        "SystemAssigned",
+        "SystemAssigned,UserAssigned",
+        "UserAssigned"
+      ],
+      "metadata": {
+        "description": "The identity type."
+      }
+    },
+    "userAssignedIdentities": {
+      "type": "object",
+      "defaultValue": {},
+      "metadata": {
+        "description": "Gets or sets a list of key value pairs that describe the set of User Assigned identities that will be used with this storage account. The key is the ARM resource identifier of the identity. Only 1 User Assigned identity is permitted here."
+      }
+    }
+  },
+  "variables": {
+    "Identity": {
+      "type": "[parameters('type')]",
+      "userAssignedIdentities": "[parameters('userAssignedIdentities')]"
+    }
+  },
+  "resources": [
+  ],
+  "outputs": {
+    "Identity": {
+      "type": "object",
+      "value": "[variables('Identity')]"
+    }
+  }
+}

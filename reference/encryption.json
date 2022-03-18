@@ -1,0 +1,57 @@
+{
+ "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+ "contentVersion": "1.0.0.0",
+ "parameters": {
+   "identity": {
+     "type": "object",
+     "metadata": {
+       "description": "Encryption identity for the storage account."
+     }
+   },
+   "keySource": {
+     "type": "string",
+     "allowedValues": [
+       "Microsoft.Keyvault",
+       "Microsoft.Storage"
+     ],
+     "metadata": {
+       "description": "The encryption keySource (provider). Possible values (case-insensitive): Microsoft.Storage, Microsoft.Keyvault"
+     }
+   },
+   "keyvaultproperties": {
+     "type": "object",
+     "metadata": {
+       "description": "Properties of key vault."
+     }
+   },
+   "requireInfrastructureEncryption": {
+     "type": "bool",
+     "metadata": {
+       "description": "A boolean indicating whether or not the service applies a secondary layer of encryption with platform managed keys for data at rest."
+     }
+   },
+   "services": {
+     "type": "object",
+     "metadata": {
+       "description": "A list of services that support encryption"
+     }
+   }
+ },
+ "variables": {
+   "Encryption": {
+     "identity": "[parameters('identity')]",
+     "keySource": "[parameters('keySource')]",
+     "keyvaultproperties": "[parameters('keyvaultproperties')]",
+     "requireInfrastructureEncryption": "[parameters('requireInfrastructureEncryption')]",
+     "services": "[parameters('services')]"
+   }
+ },
+ "resources": [
+ ],
+ "outputs": {
+   "Encryption": {
+     "type": "object",
+     "value": "[variables('Encryption')]"
+   }
+ }
+}
