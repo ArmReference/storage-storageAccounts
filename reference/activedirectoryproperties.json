@@ -1,0 +1,78 @@
+{
+ "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+ "contentVersion": "1.0.0.0",
+ "parameters": {
+   "accountType": {
+     "type": "string",
+     "allowedValues": [
+       "Computer",
+       "User"
+     ],
+     "metadata": {
+       "description": "Specifies the Active Directory account type for Azure Storage."
+     }
+   },
+   "azureStorageSid": {
+     "type": "string",
+     "metadata": {
+       "description": "Specifies the security identifier (SID) for Azure Storage."
+     }
+   },
+   "domainGuid": {
+     "type": "string",
+     "metadata": {
+       "description": "Specifies the domain GUID."
+     }
+   },
+   "domainName": {
+     "type": "string",
+     "metadata": {
+       "description": "Specifies the primary domain that the AD DNS server is authoritative for."
+     }
+   },
+   "domainSid": {
+     "type": "string",
+     "metadata": {
+       "description": "Specifies the security identifier (SID)."
+     }
+   },
+   "forestName": {
+     "type": "string",
+     "metadata": {
+       "description": "Specifies the Active Directory forest to get."
+     }
+   },
+   "netBiosDomainName": {
+     "type": "string",
+     "metadata": {
+       "description": "Specifies the NetBIOS domain name."
+     }
+   },
+   "samAccountName": {
+     "type": "string",
+     "metadata": {
+       "description": "Specifies the Active Directory SAMAccountName for Azure Storage."
+     }
+   }
+ },
+ "variables": {
+   "ActiveDirectoryProperties": {
+     "accountType": "[parameters('accountType')]",
+     "azureStorageSid": "[parameters('azureStorageSid')]",
+     "domainGuid": "[parameters('domainGuid')]",
+     "domainName": "[parameters('domainName')]",
+     "domainSid": "[parameters('domainSid')]",
+     "forestName": "[parameters('forestName')]",
+     "netBiosDomainName": "[parameters('netBiosDomainName')]",
+     "samAccountName": "[parameters('samAccountName')]"
+   }
+ },
+ "resources": [
+ ],
+ "outputs": {
+   "ActiveDirectoryProperties": {
+     "type": "object",
+     "value": "[variables('ActiveDirectoryProperties')]"
+   }
+ }
+}
