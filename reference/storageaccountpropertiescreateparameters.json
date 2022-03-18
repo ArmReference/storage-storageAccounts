@@ -160,6 +160,27 @@
       "metadata": {
         "description": "Allow or disallow public network access to Storage Account. Value is optional but if passed in, must be 'Enabled' or 'Disabled'."
       }
+    },
+    "routingPreference": {
+      "type": "object",
+      "defaultValue": {},
+      "metadata": {
+        "description": "Routing preference defines the type of network, either microsoft or internet routing to be used to deliver the user data, the default option is microsoft routing"
+      }
+    },
+    "sasPolicy": {
+      "type": "object",
+      "defaultValue": {},
+      "metadata": {
+        "description": "SasPolicy assigned to the storage account."
+      }
+    },
+    "supportsHttpsTrafficOnly": {
+      "type": "bool",
+      "defaultValue": true,
+      "metadata": {
+        "description": "Allows https traffic only to storage service if sets to true. The default value is true since API version 2019-04-01."
+      }
     }
   },
   "variables": {
@@ -183,7 +204,10 @@
       "largeFileSharesState": "[parameters('largeFileSharesState')]",
       "minimumTlsVersion": "[parameters('minimumTlsVersion')]",
       "networkAcls": "[parameters('networkAcls')]",
-      "publicNetworkAccess": "[parameters('publicNetworkAccess')]"
+      "publicNetworkAccess": "[parameters('publicNetworkAccess')]",
+      "routingPreference": "[parameters('routingPreference')]",
+      "sasPolicy": "[parameters('sasPolicy')]",
+      "supportsHttpsTrafficOnly": "[parameters('supportsHttpsTrafficOnly')]"
     }
   },
   "resources": [
