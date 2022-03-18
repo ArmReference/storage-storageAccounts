@@ -63,7 +63,7 @@
    "type": "object",
    "value": "[variables('NetworkRuleSet')]",
    "metadata": {
-    "description": "Azure KeyVault NetworkRuleSet"
+    "description": "NetworkRuleSet"
    }
   }
  }

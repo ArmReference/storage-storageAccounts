@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.1",
+  "parameters": {
+    "action": {
+      "type": "string",
+      "defaultValue": "Allow",
+      "metadata": {
+        "description": "The action of virtual network rule."
+      }
+    },
+    "value": {
+      "type": "string",
+      "metadata": {
+        "description": "Specifies the IP or IP range in CIDR format. Only IPV4 address is allowed."
+      }
+    }
+  },
+  "variables": {
+    "IPRule": {
+      "action": "[parameters('action')]",
+      "value": "[parameters('value')]"
+    }
+  },
+  "resources": [
+  ],
+  "outputs": {
+    "IPRule": {
+      "type": "object",
+      "value": "[variables('IPRule')]",
+      "metadata": {
+        "description": "IPRule"
+      }
+    }
+  }
+}
