@@ -1,4 +1,4 @@
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FArmReference%2Fstorage-storageAccounts%2F1.0.0.0%2Fazuredeploy.json)
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FArmReference%2Fstorage-storageAccounts%2F1.0.0.1%2Fazuredeploy.json)
 # Create StorageAccount
 
 This template creates a StorageAccount in Azure
@@ -44,7 +44,7 @@ armTemplate | object | Fully populated template
 ```json
 {
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
-    "contentVersion": "1.0.0.0",
+    "contentVersion": "1.0.0.1",
     "metadata": {
         "template": "azuredeploy.json"
     },
