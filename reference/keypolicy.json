@@ -1,0 +1,25 @@
+{
+ "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+ "contentVersion": "1.0.0.0",
+ "parameters": {
+   "keyExpirationPeriodInDays": {
+     "type": "int",
+     "metadata": {
+       "description": "The key expiration period in days."
+     }
+   }
+ },
+ "variables": {
+   "KeyPolicy": {
+     "keyExpirationPeriodInDays": "[parameters('keyExpirationPeriodInDays')]"
+   }
+ },
+ "resources": [
+ ],
+ "outputs": {
+   "KeyPolicy": {
+     "type": "object",
+     "value": "[variables('KeyPolicy')]"
+   }
+ }
+}
