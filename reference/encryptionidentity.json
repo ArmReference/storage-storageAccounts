@@ -1,0 +1,32 @@
+{
+ "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+ "contentVersion": "1.0.0.0",
+ "parameters": {
+   "federatedIdentityClientId": {
+     "type": "string",
+     "metadata": {
+       "description": "ClientId of the multi-tenant application to be used in conjunction with the user-assigned identity for cross-tenant customer-managed-keys server-side encryption on the storage account."
+     }
+   },
+   "userAssignedIdentity": {
+     "type": "string",
+     "metadata": {
+       "description": "Resource identifier of the UserAssigned identity to be associated with server-side encryption on the storage account."
+     }
+   }
+ },
+ "variables": {
+   "EncryptionIdentity": {
+     "federatedIdentityClientId": "[parameters('federatedIdentityClientId')]",
+     "userAssignedIdentity": "[parameters('userAssignedIdentity')]"
+   }
+ },
+ "resources": [
+ ],
+ "outputs": {
+   "EncryptionIdentity": {
+     "type": "object",
+     "value": "[variables('EncryptionIdentity')]"
+   }
+ }
+}
