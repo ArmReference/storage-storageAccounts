@@ -29,7 +29,10 @@
  "outputs": {
    "sku": {
      "type": "object",
-     "value": "[variables('sku')]"
+     "value": "[variables('sku')]",
+     "metadata": {
+       "description": "The SKU of the storage account."
+     }
    }
  }
 }

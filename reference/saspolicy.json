@@ -32,7 +32,7 @@
       "type": "object",
       "value": "[variables('SasPolicy')]",
       "metadata": {
-        "description": "SasPolicy"
+        "description": "SasPolicy assigned to the storage account."
       }
     }
   }

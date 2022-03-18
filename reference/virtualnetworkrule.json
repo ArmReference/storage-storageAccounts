@@ -29,7 +29,7 @@
       "type": "object",
       "value": "[variables('VirtualNetworkRule')]",
       "metadata": {
-        "description": "VirtualNetworkRule"
+        "description": "Sets the virtual network rules"
       }
     }
   }

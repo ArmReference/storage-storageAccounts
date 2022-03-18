@@ -47,7 +47,10 @@
  "outputs": {
    "AzureFilesIdentityBasedAuthentication": {
      "type": "object",
-     "value": "[variables('AzureFilesIdentityBasedAuthentication')]"
+     "value": "[variables('AzureFilesIdentityBasedAuthentication')]",
+      "metadata": {
+        "description": "Settings for Azure Files identity based authentication.	"
+      }
    }
  }
 }

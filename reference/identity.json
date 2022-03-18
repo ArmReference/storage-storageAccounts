@@ -34,7 +34,10 @@
   "outputs": {
     "Identity": {
       "type": "object",
-      "value": "[variables('Identity')]"
+      "value": "[variables('Identity')]",
+     "metadata": {
+       "description": "Identity for the resource."
+     }
     }
   }
 }

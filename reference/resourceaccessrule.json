@@ -28,7 +28,7 @@
       "type": "object",
       "value": "[variables('ResourceAccessRule')]",
       "metadata": {
-        "description": "ResourceAccessRule"
+        "description": "Sets the resource access rules"
       }
     }
   }

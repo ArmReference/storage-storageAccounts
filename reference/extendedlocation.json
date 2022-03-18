@@ -27,7 +27,10 @@
  "outputs": {
    "ExtendedLocation": {
      "type": "object",
-     "value": "[variables('ExtendedLocation')]"
+     "value": "[variables('ExtendedLocation')]",
+     "metadata": {
+       "description": "The complex type of the extended location."
+     }
    }
  }
 }

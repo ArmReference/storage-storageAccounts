@@ -40,7 +40,10 @@
   "outputs": {
     "AccountImmutabilityPolicyProperties": {
       "type": "object",
-      "value": "[variables('AccountImmutabilityPolicyProperties')]"
+      "value": "[variables('AccountImmutabilityPolicyProperties')]",
+      "metadata": {
+        "description": "This defines account-level immutability policy properties."
+      }
     }
   }
 }

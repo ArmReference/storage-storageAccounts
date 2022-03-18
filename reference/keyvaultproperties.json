@@ -34,7 +34,10 @@
   "outputs": {
     "KeyVaultProperties": {
       "type": "object",
-      "value": "[variables('KeyVaultProperties')]"
+      "value": "[variables('KeyVaultProperties')]",
+      "metadata": {
+        "description": "Properties of key vault."
+      }
     }
   }
 }

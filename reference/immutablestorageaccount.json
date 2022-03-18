@@ -26,7 +26,10 @@
  "outputs": {
    "ImmutableStorageAccount": {
      "type": "object",
-     "value": "[variables('ImmutableStorageAccount')]"
+     "value": "[variables('ImmutableStorageAccount')]",
+      "metadata": {
+        "description": "This property enables and defines account-level immutability. Enabling the feature auto-enables Blob Versioning."
+      }
    }
  }
 }
