@@ -4,7 +4,7 @@
 
 Parameter name | Required | Description
 -------------- | -------- | -----------
-name           | Yes      | The resource name
+name           | Yes      | The resource name.
 location       | No       | Resource location.
 sku            | Yes      | The SKU of the storage account.
 kind           | Yes      |
@@ -18,7 +18,7 @@ DependsOn      | No       | Pass dependencies
 
 ![Parameter Setting](https://img.shields.io/badge/parameter-required-orange?style=flat-square)
 
-The resource name
+The resource name.
 
 ### location
 
