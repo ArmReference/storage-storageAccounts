@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "keyname": {
+      "type": "string",
+      "metadata": {
+        "description": "The name of the extended location."
+      }
+    },
+    "keyvaulturi": {
+      "type": "string",
+      "defaultValue": "EdgeZone",
+      "metadata": {
+        "description": "The type of extendedLocation."
+      }
+    },
+    "keyversion": {
+      "type": "string",
+      "defaultValue": "EdgeZone",
+      "metadata": {
+        "description": "The type of extendedLocation."
+      }
+    }
+  },
+  "variables": {
+    "KeyVaultProperties": {
+      "keyname": "[parameters('keyname')]",
+      "keyvaulturi": "[parameters('keyvaulturi')]",
+      "keyversion": "[parameters('keyversion')]"
+
+    }
+  },
+  "resources": [
+  ],
+  "outputs": {
+    "KeyVaultProperties": {
+      "type": "object",
+      "value": "[variables('KeyVaultProperties')]"
+    }
+  }
+}
