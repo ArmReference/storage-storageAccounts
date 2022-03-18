@@ -1,0 +1,96 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "accessTier": {
+      "type": "string",
+      "allowedValues": [
+        "Cool",
+        "Hot"
+      ],
+      "metadata": {
+        "description": "The identity type."
+      }
+    },
+    "allowBlobPublicAccess": {
+      "type": "bool",
+      "defaultValue": true,
+      "metadata": {
+        "description": "Allow or disallow public access to all blobs or containers in the storage account. The default interpretation is true for this property."
+      }
+    },
+    "allowCrossTenantReplication": {
+      "type": "bool",
+      "defaultValue": true,
+      "metadata": {
+        "description": "Allow or disallow cross AAD tenant object replication. The default interpretation is true for this property."
+      }
+    },
+    "allowedCopyScope": {
+      "type": "string",
+      "allowedValues": [
+        "AAD",
+        "PrivateLink"
+      ],
+      "metadata": {
+        "description": "Restrict copy to and from Storage Accounts within an AAD tenant or with Private Links to the same VNet."
+      }
+    },
+    "allowSharedKeyAccess": {
+      "type": "bool",
+      "defaultValue": null,
+      "metadata": {
+        "description": "Indicates whether the storage account permits requests to be authorized with the account access key via Shared Key. If false, then all requests, including shared access signatures, must be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to true."
+      }
+    },
+    "userAssignedIdentities": {
+      "type": "object",
+      "defaultValue": {},
+      "metadata": {
+        "description": "Gets or sets a list of key value pairs that describe the set of User Assigned identities that will be used with this storage account. The key is the ARM resource identifier of the identity. Only 1 User Assigned identity is permitted here."
+      }
+    },
+    "azureFilesIdentityBasedAuthentication": {
+      "type": "object",
+      "defaultValue": {},
+      "metadata": {
+        "description": "Settings for Azure Files identity based authentication."
+      }
+    },
+    "customDomain": {
+      "type": "object",
+      "defaultValue": {},
+      "metadata": {
+        "description": "The custom domain assigned to this storage account. This can be set via Update."
+      }
+    },
+    "defaultToOAuthAuthentication":{
+      "type": "bool",
+      "defaultValue": false,
+      "metadata": {
+        "description": "A boolean flag which indicates whether the default authentication is OAuth or not. The default interpretation is false for this property."
+      }
+    }
+  },
+  "variables": {
+    "StorageAccountPropertiesCreateParameters": {
+      "accessTier": "[parameters('accessTier')]",
+      "allowBlobPublicAccess": "[parameters('allowBlobPublicAccess')]",
+      "allowCrossTenantReplication": "[parameters('allowCrossTenantReplication')]",
+      "allowedCopyScope": "[parameters('allowedCopyScope')]",
+      "allowSharedKeyAccess": "[parameters('allowSharedKeyAccess')]",
+      "userAssignedIdentities": "[parameters('userAssignedIdentities')]",
+      "azureFilesIdentityBasedAuthentication": "[parameters('azureFilesIdentityBasedAuthentication')]",
+      "customDomain": "[parameters('customDomain')]",
+      "defaultToOAuthAuthentication": "[parameters('defaultToOAuthAuthentication')]"
+    }
+  },
+  "resources": [
+  ],
+  "outputs": {
+    "StorageAccountPropertiesCreateParameters": {
+      "type": "object",
+      "value": "[variables('StorageAccountPropertiesCreateParameters')]"
+    }
+  }
+}

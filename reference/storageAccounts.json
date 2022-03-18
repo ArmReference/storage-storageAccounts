@@ -1,5 +1,5 @@
 ﻿{
-  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
     "name": {
@@ -8,15 +8,15 @@
         "description": "The resource name"
       }
     },
-    "sku": {
+    "location": {
       "type": "string",
-      "allowedValues": [
-        "Standard_LRS",
-        "Standard_GRS",
-        "Standard_RAGRS",
-        "Standard_ZRS",
-        "Premium_LRS"
-      ],
+      "defaultValue": "[resourceGroup().location]",
+      "metadata": {
+        "description": "Resource location."
+      }
+    },
+    "sku": {
+      "type": "object",
       "metadata": {
         "description": "The SKU of the storage account."
       }
@@ -24,12 +24,35 @@
     "kind": {
       "type": "string",
       "allowedValues": [
+        "BlobStorage",
+        "BlockBlobStorage",
+        "FileStorage",
         "Storage",
-        "StorageV2",
-        "BlobStorage"
+        "StorageV2"
       ],
       "metadata": {
         "desciption": "Indicates the type of storage account."
+      }
+    },
+    "extendedLocation": {
+      "type": "object",
+      "defaultValue": {},
+      "metadata": {
+        "description": "The complex type of the extended location."
+      }
+    },
+    "identity": {
+      "type": "object",
+      "defaultValue": {},
+      "metadata": {
+        "description": "	Identity for the resource."
+      }
+    },
+    "tags": {
+      "type": "object",
+      "defaultValue": {},
+      "metadata": {
+        "description": "Resource tags."
       }
     },
     "DependsOn": {
@@ -41,21 +64,21 @@
     }
   },
   "variables": {
-    "comments": {
-      "definition": "https://docs.microsoft.com/en-us/rest/api/storagerp/srp_json_create_storage_account"
-    },
     "storageAccounts": {
       "type": "Microsoft.Storage/storageAccounts",
       "name": "[parameters('name')]",
       "apiVersion": "2017-10-01",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('location')]",
       "dependsOn": "[if(empty(parameters('DependsOn')),json('null'),parameters('DependsOn'))]",
       "sku": {
         "name": "[parameters('sku')]"
       },
       "kind": "[parameters('kind')]",
+      "extendedLocation": "[parameters('extendedLocation')]",
+      "identity": "[parameters('identity')]",
       "properties": {
-      }
+      },
+      "tags": "[parameters('tags')]"
     }
   },
   "resources": [

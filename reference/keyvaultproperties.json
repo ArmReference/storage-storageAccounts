@@ -5,21 +5,19 @@
     "keyname": {
       "type": "string",
       "metadata": {
-        "description": "The name of the extended location."
+        "description": "The name of KeyVault key."
       }
     },
     "keyvaulturi": {
       "type": "string",
-      "defaultValue": "EdgeZone",
       "metadata": {
-        "description": "The type of extendedLocation."
+        "description": "The Uri of KeyVault."
       }
     },
     "keyversion": {
       "type": "string",
-      "defaultValue": "EdgeZone",
       "metadata": {
-        "description": "The type of extendedLocation."
+        "description": "The version of KeyVault key."
       }
     }
   },
