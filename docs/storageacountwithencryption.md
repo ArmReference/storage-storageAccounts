@@ -1,23 +1,5 @@
 # Azure template
 
-## Parameters
-
-Parameter name | Required | Description
--------------- | -------- | -----------
-keyExpirationPeriodInDays | Yes      | The key expiration period in days.
-
-### keyExpirationPeriodInDays
-
-![Parameter Setting](https://img.shields.io/badge/parameter-required-orange?style=flat-square)
-
-The key expiration period in days.
-
-## Outputs
-
-Name | Type | Description
----- | ---- | -----------
-KeyPolicy | object | KeyPolicy assigned to the storage account.
-
 ## Snippets
 
 ### Parameter file
@@ -27,13 +9,9 @@ KeyPolicy | object | KeyPolicy assigned to the storage account.
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "metadata": {
-        "template": "reference/keypolicy.json"
+        "template": "templates/storageacountwithencryption.json"
     },
-    "parameters": {
-        "keyExpirationPeriodInDays": {
-            "value": 0
-        }
-    }
+    "parameters": {}
 }
 ```
 
