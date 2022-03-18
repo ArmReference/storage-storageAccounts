@@ -1,0 +1,35 @@
+﻿{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.1",
+  "parameters": {
+    "resourceId": {
+      "type": "string",
+      "metadata": {
+        "description": "Resource Id"
+      }
+    },
+    "tenantId": {
+      "type": "string",
+      "metadata": {
+        "description": "Tenant Id"
+      }
+    }
+  },
+  "variables": {
+    "ResourceAccessRule": {
+      "resourceId": "[parameters('resourceId')]",
+      "tenantId": "[parameters('tenantId')]"
+    }
+  },
+  "resources": [
+  ],
+  "outputs": {
+    "ResourceAccessRule": {
+      "type": "object",
+      "value": "[variables('ResourceAccessRule')]",
+      "metadata": {
+        "description": "ResourceAccessRule"
+      }
+    }
+  }
+}
