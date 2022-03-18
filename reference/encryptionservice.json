@@ -31,7 +31,10 @@
   "outputs": {
     "EncryptionService": {
       "type": "object",
-      "value": "[variables('EncryptionService')]"
+      "value": "[variables('EncryptionService')]",
+      "metadata": {
+        "description": "A service that allows server-side encryption to be used."
+      }
     }
   }
 }

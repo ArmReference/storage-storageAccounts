@@ -51,7 +51,10 @@
  "outputs": {
    "Encryption": {
      "type": "object",
-     "value": "[variables('Encryption')]"
+     "value": "[variables('Encryption')]",
+      "metadata": {
+        "description": "The encryption settings on the storage account."
+      }
    }
  }
 }

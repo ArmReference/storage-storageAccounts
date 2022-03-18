@@ -63,7 +63,7 @@
    "type": "object",
    "value": "[variables('NetworkRuleSet')]",
    "metadata": {
-    "description": "NetworkRuleSet"
+    "description": "Network rule set"
    }
   }
  }

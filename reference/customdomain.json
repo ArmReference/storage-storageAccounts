@@ -27,7 +27,10 @@
   "outputs": {
     "CustomDomain": {
       "type": "object",
-      "value": "[variables('CustomDomain')]"
+      "value": "[variables('CustomDomain')]",
+      "metadata": {
+        "description": "The custom domain assigned to this storage account. This can be set via Update"
+      }
     }
   }
 }

@@ -29,7 +29,7 @@
       "type": "object",
       "value": "[variables('IPRule')]",
       "metadata": {
-        "description": "IPRule"
+        "description": "Sets the IP ACL rules"
       }
     }
   }

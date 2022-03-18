@@ -215,7 +215,10 @@
   "outputs": {
     "StorageAccountPropertiesCreateParameters": {
       "type": "object",
-      "value": "[variables('StorageAccountPropertiesCreateParameters')]"
+      "value": "[variables('StorageAccountPropertiesCreateParameters')]",
+      "metadata": {
+        "description": "The parameters used to create the storage account."
+      }
     }
   }
 }

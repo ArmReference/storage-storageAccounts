@@ -72,7 +72,10 @@
  "outputs": {
    "ActiveDirectoryProperties": {
      "type": "object",
-     "value": "[variables('ActiveDirectoryProperties')]"
+     "value": "[variables('ActiveDirectoryProperties')]",
+      "metadata": {
+        "description": "Settings properties for Active Directory (AD)."
+      }
    }
  }
 }

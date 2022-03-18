@@ -19,7 +19,10 @@
  "outputs": {
    "KeyPolicy": {
      "type": "object",
-     "value": "[variables('KeyPolicy')]"
+     "value": "[variables('KeyPolicy')]",
+      "metadata": {
+        "description": "KeyPolicy assigned to the storage account."
+      }
    }
  }
 }
