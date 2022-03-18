@@ -64,11 +64,101 @@
         "description": "The custom domain assigned to this storage account. This can be set via Update."
       }
     },
-    "defaultToOAuthAuthentication":{
+    "defaultToOAuthAuthentication": {
       "type": "bool",
       "defaultValue": false,
       "metadata": {
         "description": "A boolean flag which indicates whether the default authentication is OAuth or not. The default interpretation is false for this property."
+      }
+    },
+    "encryption": {
+      "type": "object",
+      "defaultValue": {},
+      "metadata": {
+        "description": "The encryption settings on the storage account."
+      }
+    },
+    "immutableStorageWithVersioning": {
+      "type": "object",
+      "defaultValue": {},
+      "metadata": {
+        "description": "This property enables and defines account-level immutability. Enabling the feature auto-enables Blob Versioning."
+      }
+    },
+    "isHnsEnabled": {
+      "type": "bool",
+      "defaultValue": false,
+      "metadata": {
+        "description": "Account HierarchicalNamespace enabled if sets to true."
+      }
+    },
+    "isLocalUserEnabled": {
+      "type": "bool",
+      "defaultValue": false,
+      "metadata": {
+        "description": "Enables local users feature, if set to true"
+      }
+    },
+    "isNfsV3Enabled": {
+      "type": "bool",
+      "defaultValue": false,
+      "metadata": {
+        "description": "NFS 3.0 protocol support enabled if set to true."
+      }
+    },
+    "isSftpEnabled": {
+      "type": "bool",
+      "defaultValue": false,
+      "metadata": {
+        "description": "Enables Secure File Transfer Protocol, if set to true"
+      }
+    },
+    "keyPolicy": {
+      "type": "object",
+      "defaultValue": {},
+      "metadata": {
+        "description": "KeyPolicy assigned to the storage account."
+      }
+    },
+    "largeFileSharesState": {
+      "type": "string",
+      "defaultValue": "Disabled",
+      "allowedValues": [
+        "Disabled",
+        "Enabled"
+      ],
+      "metadata": {
+        "description": "Allow large file shares if sets to Enabled. It cannot be disabled once it is enabled."
+      }
+    },
+    "minimumTlsVersion": {
+      "type": "string",
+      "defaultValue": "TLS1_0",
+      "allowedValues": [
+        "TLS1_0",
+        "TLS1_1",
+        "TLS1_2"
+      ],
+      "metadata": {
+        "description": "Set the minimum TLS version to be permitted on requests to storage. The default interpretation is TLS 1.0 for this property."
+      }
+    },
+    "networkAcls": {
+      "type": "object",
+      "defaultValue": {},
+      "metadata": {
+        "description": "Network rule set"
+      }
+    },
+    "publicNetworkAccess": {
+      "type": "string",
+      "defaultValue": "Enabled",
+      "allowedValues": [
+        "Disabled",
+        "Enabled"
+      ],
+      "metadata": {
+        "description": "Allow or disallow public network access to Storage Account. Value is optional but if passed in, must be 'Enabled' or 'Disabled'."
       }
     }
   },
@@ -82,7 +172,18 @@
       "userAssignedIdentities": "[parameters('userAssignedIdentities')]",
       "azureFilesIdentityBasedAuthentication": "[parameters('azureFilesIdentityBasedAuthentication')]",
       "customDomain": "[parameters('customDomain')]",
-      "defaultToOAuthAuthentication": "[parameters('defaultToOAuthAuthentication')]"
+      "defaultToOAuthAuthentication": "[parameters('defaultToOAuthAuthentication')]",
+      "encryption": "[parameters('encryption')]",
+      "immutableStorageWithVersioning": "[parameters('immutableStorageWithVersioning')]",
+      "isHnsEnabled": "[parameters('isHnsEnabled')]",
+      "isLocalUserEnabled": "[parameters('isLocalUserEnabled')]",
+      "isNfsV3Enabled": "[parameters('isNfsV3Enabled')]",
+      "isSftpEnabled": "[parameters('isSftpEnabled')]",
+      "keyPolicy": "[parameters('keyPolicy')]",
+      "largeFileSharesState": "[parameters('largeFileSharesState')]",
+      "minimumTlsVersion": "[parameters('minimumTlsVersion')]",
+      "networkAcls": "[parameters('networkAcls')]",
+      "publicNetworkAccess": "[parameters('publicNetworkAccess')]"
     }
   },
   "resources": [
